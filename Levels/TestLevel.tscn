@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1rwx4jeuiwvy"]
+
+[ext_resource type="Script" path="res://Levels/TestLevel.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bdvdnmpd03gvp" path="res://GameObjects/Golfball/Golfball.tscn" id="2"]
+
+[node name="TestLevel" type="TileMap"]
+format = 2
+script = ExtResource("1")
+
+[node name="Golfball" parent="." instance=ExtResource("2")]
+position = Vector2(331, 147)

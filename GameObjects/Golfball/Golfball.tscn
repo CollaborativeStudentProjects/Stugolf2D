@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdvdnmpd03gvp"]
+
+[ext_resource type="Texture2D" uid="uid://bfd3su8lvvpb4" path="res://GameObjects/Golfball/Golfball.png" id="1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_te0lj"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 3.0
+
+[node name="Golfball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_te0lj")
+gravity_scale = 0.0
+linear_damp = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")

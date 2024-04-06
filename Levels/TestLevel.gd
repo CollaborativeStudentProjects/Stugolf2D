@@ -44,6 +44,25 @@ func _draw():
 		draw_line(golfball.position, mouse_position_limited, Color.RED, 6)
 		
 func _shoot_golfball():
-	if mouse_position != null:
-		#TODO: implement universal logic this is just a test
-		golfball.apply_impulse(Vector2(mouse_position.x,mouse_position.y))
+								#if the golfball is almost stopped (worked good in testing)
+	if mouse_position != null && golfball.linear_velocity <= Vector2(10,10):
+		
+		var distance_x = abs(golfball.position.x- mouse_position.x)
+		var distance_y = abs(golfball.position.y - mouse_position.y)
+		
+		#upper left
+		if mouse_position.x <= golfball.position.x && mouse_position.y <= golfball.position.y:
+			golfball.apply_impulse(Vector2(distance_x,distance_y))
+			print("a")
+		#upper right
+		if mouse_position.x >= golfball.position.x && mouse_position.y <= golfball.position.y:
+			golfball.apply_impulse(Vector2(-distance_x,distance_y))
+			print("b")
+		#lower left
+		if mouse_position.x <= golfball.position.x && mouse_position.y >= golfball.position.y:
+			golfball.apply_impulse(Vector2(distance_x,-distance_y))
+			print("c")
+		#lower right
+		if mouse_position.x >= golfball.position.x && mouse_position.y >= golfball.position.y:
+			golfball.apply_impulse(Vector2(-distance_x,-distance_y))
+			print("d")

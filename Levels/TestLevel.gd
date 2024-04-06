@@ -53,16 +53,12 @@ func _shoot_golfball():
 		#upper left
 		if mouse_position.x <= golfball.position.x && mouse_position.y <= golfball.position.y:
 			golfball.apply_impulse(Vector2(distance_x,distance_y))
-			print("a")
 		#upper right
 		if mouse_position.x >= golfball.position.x && mouse_position.y <= golfball.position.y:
 			golfball.apply_impulse(Vector2(-distance_x,distance_y))
-			print("b")
 		#lower left
 		if mouse_position.x <= golfball.position.x && mouse_position.y >= golfball.position.y:
 			golfball.apply_impulse(Vector2(distance_x,-distance_y))
-			print("c")
 		#lower right
 		if mouse_position.x >= golfball.position.x && mouse_position.y >= golfball.position.y:
 			golfball.apply_impulse(Vector2(-distance_x,-distance_y))
-			print("d")

@@ -9,6 +9,7 @@ bounce = 1.0
 radius = 3.0
 
 [node name="Golfball" type="RigidBody2D"]
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_te0lj")
 gravity_scale = 0.0
 linear_damp = 1.0
